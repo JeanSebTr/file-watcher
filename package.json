@@ -2,6 +2,15 @@
   "name": "file-watcher",
   "version": "0.0.1",
   "description": "Modern file watcher for nodejs",
+  "tags": [
+    "fs.watch",
+    "watcher",
+    "directories",
+    "watch",
+    "fs"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,7 +21,5 @@
     "email": "jeansebtr@xpensia.com",
     "url": "http://blog.jeansebtr.com/"
   },
-  "license": "MIT",
-  "readmeFilename": "README.md",
   "gitHead": "7838d1175bd4af73b8b0b18201593e664869034a"
 }
