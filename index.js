@@ -8,7 +8,7 @@ function Watcher(opts) {
     EventEmitter.call(this);
 
     this.filter = opts && typeof opts.filter == 'function' && opts.filter || null;
-    this.root = null;
+    this.root = opts && opts.root || null;
     this.dir = null;
 }
 module.exports = Watcher;
@@ -65,8 +65,8 @@ function onChange(src, event, filename) {
                     src.files[filename] = new File(file, stats);
                 }
                 ev = new Event(null, null, stats, file);
-                self.emit('change', ev);
-                self.emit('any', 'change', ev);
+                self.emit('create', ev);
+                self.emit('any', 'create', ev);
             }
             else {
                 src.files[filename] = false;
