@@ -32,7 +32,11 @@ var watcher = new Watcher({
 
 watcher.on('...', function() { /* Watcher is an EventEmitter */ });
 
-watcher.watch();
+watcher.watch(__dirname, function(err){
+    if (err){
+        console.log(err);
+    }
+});
 
 ```
 
