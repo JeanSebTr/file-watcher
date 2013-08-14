@@ -1,6 +1,6 @@
 {
   "name": "file-watcher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Modern file watcher for nodejs",
   "tags": [
     "fs.watch",
