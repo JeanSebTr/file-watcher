@@ -32,7 +32,11 @@ var watcher = new Watcher({
 
 watcher.on('...', function() { /* Watcher is an EventEmitter */ });
 
-watcher.watch();
+watcher.watch(__dirname, function(err){
+    if (err){
+        console.log(err);
+    }
+});
 
 ```
 
@@ -49,7 +53,10 @@ watcher.watch();
 Return __true__ to include this file or directory and their children.
 Return __false__ to exclude them.
 
-### _method_ watcher.watch()
+### _method_ watcher.watch(dir, cb)
+
+- dir : _Directory to watch_
+- cb : (optional) _callback fired then the watch has started. As error object may be passed as the first argument if there was a problem._
 
 Start watching the directory tree
 
