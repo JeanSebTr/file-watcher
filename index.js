@@ -18,7 +18,7 @@ Watcher.prototype.watch = function(dir, cb) {
     var self = this;
     this.root = dir || this.root;
     if(typeof this.root != 'string') {
-        var e = new Error('Must pass a file or directory to watch to Watcher.watch');
+        var e = new Error('Must pass a file or directory to Watcher.watch');
         if(typeof cb == 'function') return cb(e);
         throw e;
     }
