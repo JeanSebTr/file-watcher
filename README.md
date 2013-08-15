@@ -18,7 +18,7 @@ npm install file-watcher
 var Watcher = require('file-watcher');
 
 var watcher = new Watcher({
-    root: __dirname
+    root: __dirname,
     filter: function(filename, stats) {
         // only watch those files
         if(filename.indexOf('.styl') != -1) {

@@ -16,8 +16,13 @@ Watcher.prototype = Object.create(EventEmitter.prototype);
 
 Watcher.prototype.watch = function(dir, cb) {
     var self = this;
-    this.root = dir;
-    fs.stat(dir, function(err, stats) {
+    this.root = dir || this.root;
+    if(typeof this.root != 'string') {
+        var e = new Error('Must pass a file or directory to watch to Watcher.watch');
+        if(typeof cb == 'function') return cb(e);
+        throw e;
+    }
+    fs.stat(this.root, function(err, stats) {
         if(err) {
             return cb(err);
         }
